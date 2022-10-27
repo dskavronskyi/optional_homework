@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:optional_homework_1/screens/home_screen.dart';
+import 'package:optional_homework_1/screens/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,17 +17,12 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MainScreen(),
+      initialRoute: '/',
+      routes: {
+        '/' : (context) =>  const SplashScreen(),
+        '/home' : (context) => const Home(),
+      },
     );
-  }
-}
-
-class MainScreen extends StatelessWidget {
-  const MainScreen({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold();
   }
 }
 
