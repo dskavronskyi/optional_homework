@@ -10,15 +10,16 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   final _loginController = TextEditingController();
   final _passwordController = TextEditingController();
+  String? errorText = null;
 
-  void _auth() {
+   _auth() {
     final login = _loginController.text;
     final password = _passwordController.text;
 
     if (login == 'admin' && password == '123456') {
-      print('open app');
+      Navigator.pushReplacementNamed(context, '/home');
     } else {
-      print('youre loh');
+      errorText = 'Вказаний логін чи пароль не вірні';
     }
 
     setState(() {});
@@ -35,19 +36,19 @@ class _AuthScreenState extends State<AuthScreen> {
           children: [
             TextFormField(
               controller: _loginController,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              decoration:  InputDecoration(
+                border: const OutlineInputBorder(),
                 labelText: 'Your Login',
-                errorText: null,
+                errorText: errorText,
               ),
             ),
             const SizedBox(height: 25),
             TextFormField(
               controller: _passwordController,
-              decoration: const InputDecoration(
-                border: OutlineInputBorder(),
+              decoration:  InputDecoration(
+                border: const OutlineInputBorder(),
                 labelText: 'Your Password',
-                errorText: null,
+                errorText: errorText,
               ),
             ),
             const SizedBox(height: 35),

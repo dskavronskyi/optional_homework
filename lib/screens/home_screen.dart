@@ -5,11 +5,24 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return  Scaffold(
       body: Center(
-        child: Text(
-          'Вітаю ти на домашній сторінці !',
-          style: TextStyle(fontSize: 25),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: const [
+            Text(
+              'Вітаю!',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'OGO!',
+              style: TextStyle(fontSize: 25),
+            ),
+            Text(
+              'Ти на домашній сторінці !',
+              style: TextStyle(fontSize: 25),
+            ),
+          ],
         ),
       ),
     );
