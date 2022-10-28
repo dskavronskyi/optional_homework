@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:optional_homework_1/screens/auth_screen.dart';
 import 'package:optional_homework_1/screens/home_screen.dart';
 import 'package:optional_homework_1/screens/splash_screen.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/' : (context) =>  const SplashScreen(),
-        '/home' : (context) => const Home(),
+        '/auth' : (context) => const AuthScreen(),
       },
     );
   }
